@@ -9,10 +9,10 @@ const mongoose=require('mongoose')
 mongoose.connect('mongodb+srv://hari:hari@cluster0.1socvoq.mongodb.net/',{dbName:"project"}).then(()=>{console.log("Db connected")}).catch((err)=>{console.log("Error Occured")})
 
 const Login = require('./models/login')
-app.post('/login',async (req,res)=>{
-    const {phoneno,password}=req.body
+app.get('/login',async (req,res)=>{
+    //const {phoneno,password}=req.body
     try{
-    let data=await Login.find({phoneno:phoneno,password:password})
+    let data=await Login.find({phoneno:"7285968389",password:"hari"})
     if(data.length>0){
         let enc=JSON.stringify(data)
         res.json({token:enc})
