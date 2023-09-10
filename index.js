@@ -5,7 +5,11 @@ const cors=require('cors')
 app.use(cors())
 
 app.get('/',(req,res)=>{
-    res.json("hello")
+    res.json({name:"hari"})
+})
+
+app.post('/login',(req,res)=>{
+    res.json({name:"hari"})
 })
 
 app.listen(3000)
